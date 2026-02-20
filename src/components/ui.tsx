@@ -7,13 +7,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const Card = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-  <div className={cn("bg-white rounded-xl shadow-sm border border-gray-100 p-6", className)}>
+  <div className={cn("bg-slate-900 rounded-xl shadow-lg border border-slate-800 p-6 text-white", className)}>
     {children}
   </div>
 );
 
 export const Label = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-  <label className={cn("block text-sm font-medium text-gray-700 mb-1", className)}>
+  <label className={cn("block text-sm font-medium text-slate-300 mb-1", className)}>
     {children}
   </label>
 );
@@ -23,7 +23,7 @@ export const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttribute
     <input
       ref={ref}
       className={cn(
-        "w-full rounded-lg border-gray-300 border px-3 py-2 text-sm focus:border-indigo-500 focus:ring-indigo-500 shadow-sm transition-colors",
+        "w-full rounded-lg border-slate-700 border bg-slate-800 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm transition-colors",
         className
       )}
       {...props}
@@ -37,7 +37,7 @@ export const Select = React.forwardRef<HTMLSelectElement, React.SelectHTMLAttrib
     <select
       ref={ref}
       className={cn(
-        "w-full rounded-lg border-gray-300 border px-3 py-2 text-sm focus:border-indigo-500 focus:ring-indigo-500 shadow-sm transition-colors bg-white",
+        "w-full rounded-lg border-slate-700 border bg-slate-800 px-3 py-2 text-sm text-white focus:border-indigo-500 focus:ring-indigo-500 shadow-sm transition-colors",
         className
       )}
       {...props}
@@ -51,7 +51,7 @@ export const Button = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttrib
     <button
       ref={ref}
       className={cn(
-        "inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed",
+        "inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed",
         className
       )}
       {...props}

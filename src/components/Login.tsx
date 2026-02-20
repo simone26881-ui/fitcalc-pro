@@ -37,16 +37,16 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-slate-950 p-4">
       <Card className="w-full max-w-md">
         <div className="flex flex-col items-center mb-6">
-          <div className="bg-indigo-100 p-3 rounded-full mb-3">
-            <User className="w-6 h-6 text-indigo-600" />
+          <div className="bg-indigo-500/20 p-3 rounded-full mb-3">
+            <User className="w-6 h-6 text-indigo-400" />
           </div>
-          <h1 className="text-2xl font-bold text-slate-900">
+          <h1 className="text-2xl font-bold text-white">
             {isRegistering ? 'Crea Account' : 'Accedi'}
           </h1>
-          <p className="text-slate-500 text-sm mt-1">
+          <p className="text-slate-400 text-sm mt-1">
             Sincronizza i tuoi dati su tutti i dispositivi
           </p>
         </div>
@@ -71,7 +71,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
           </div>
 
           {error && (
-            <div className="text-red-500 text-sm bg-red-50 p-2 rounded">
+            <div className="text-red-400 text-sm bg-red-500/10 p-2 rounded border border-red-500/20">
               {error}
             </div>
           )}
@@ -88,7 +88,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
             <button
               type="button"
               onClick={() => setIsRegistering(!isRegistering)}
-              className="text-sm text-indigo-600 hover:underline"
+              className="text-sm text-indigo-400 hover:text-indigo-300 hover:underline transition-colors"
             >
               {isRegistering 
                 ? 'Hai già un account? Accedi' 

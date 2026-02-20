@@ -26,8 +26,8 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({ userData, onChan
 
   return (
     <Card className="h-full">
-      <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-        <span className="bg-indigo-100 text-indigo-700 p-1.5 rounded-lg text-sm">1</span>
+      <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+        <span className="bg-indigo-500/20 text-indigo-400 p-1.5 rounded-lg text-sm">1</span>
         I tuoi Dati
       </h2>
       
@@ -100,11 +100,11 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({ userData, onChan
               placeholder="Es. 20"
               className="pr-12"
             />
-            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400 text-sm">
+            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-400 text-sm">
               g/day
             </div>
           </div>
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             1g di grasso corporeo ≈ 9 kcal di deficit
           </p>
         </div>

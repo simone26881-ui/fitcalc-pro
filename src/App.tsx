@@ -105,25 +105,25 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans pb-20">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans pb-20">
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
+      <header className="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="bg-indigo-600 p-2 rounded-lg">
               <Activity className="w-5 h-5 text-white" />
             </div>
-            <h1 className="text-xl font-bold text-slate-900 tracking-tight">
-              FitCalc <span className="text-indigo-600">Pro</span>
+            <h1 className="text-xl font-bold text-white tracking-tight">
+              FitCalc <span className="text-indigo-500">Pro</span>
             </h1>
           </div>
           <div className="flex items-center gap-4">
-            <div className="text-sm text-slate-500 hidden sm:block">
+            <div className="text-sm text-slate-400 hidden sm:block">
               Sincronizzato
             </div>
             <button 
               onClick={handleLogout}
-              className="p-2 text-slate-400 hover:text-slate-600 transition-colors"
+              className="p-2 text-slate-400 hover:text-white transition-colors"
               title="Esci"
             >
               <LogOut className="w-5 h-5" />
@@ -169,8 +169,8 @@ function App() {
 
       </main>
 
-      <footer className="bg-white border-t border-slate-200 mt-12 py-8">
-        <div className="max-w-7xl mx-auto px-4 text-center text-slate-400 text-sm">
+      <footer className="bg-slate-900 border-t border-slate-800 mt-12 py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
           <p>© {new Date().getFullYear()} FitCalc Pro. Database alimenti italiani incluso.</p>
         </div>
       </footer>

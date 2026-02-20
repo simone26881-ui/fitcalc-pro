@@ -38,16 +38,16 @@ export const WeightTracker: React.FC<WeightTrackerProps> = ({ history, onAddEntr
 
   return (
     <Card className="h-full">
-      <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-        <span className="bg-indigo-100 text-indigo-700 p-1.5 rounded-lg text-sm">5</span>
+      <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+        <span className="bg-indigo-500/20 text-indigo-400 p-1.5 rounded-lg text-sm">5</span>
         Andamento Peso
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Input Section */}
         <div className="lg:col-span-1 space-y-4">
-          <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-            <h3 className="font-medium text-slate-900 mb-3">Registra Peso</h3>
+          <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+            <h3 className="font-medium text-white mb-3">Registra Peso</h3>
             <div className="space-y-3">
               <div>
                 <Label>Data</Label>
@@ -76,22 +76,22 @@ export const WeightTracker: React.FC<WeightTrackerProps> = ({ history, onAddEntr
           </div>
 
           <div className="max-h-[300px] overflow-auto">
-            <h3 className="font-medium text-slate-900 mb-2 text-sm">Storico</h3>
+            <h3 className="font-medium text-white mb-2 text-sm">Storico</h3>
             {sortedHistory.length === 0 ? (
-              <p className="text-sm text-slate-400 italic">Nessuna misurazione.</p>
+              <p className="text-sm text-slate-500 italic">Nessuna misurazione.</p>
             ) : (
               <div className="space-y-2">
                 {[...sortedHistory].reverse().map((entry) => (
-                  <div key={entry.id} className="flex items-center justify-between p-2 bg-white border border-slate-100 rounded-lg text-sm">
+                  <div key={entry.id} className="flex items-center justify-between p-2 bg-slate-800 border border-slate-700 rounded-lg text-sm">
                     <div className="flex flex-col">
-                      <span className="font-medium text-slate-700">{entry.weight} kg</span>
-                      <span className="text-xs text-slate-400">
+                      <span className="font-medium text-slate-200">{entry.weight} kg</span>
+                      <span className="text-xs text-slate-500">
                         {format(parseISO(entry.date), 'd MMM yyyy', { locale: it })}
                       </span>
                     </div>
                     <button 
                       onClick={() => onRemoveEntry(entry.id)}
-                      className="text-slate-300 hover:text-red-500 transition-colors"
+                      className="text-slate-500 hover:text-red-500 transition-colors"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -107,7 +107,7 @@ export const WeightTracker: React.FC<WeightTrackerProps> = ({ history, onAddEntr
           {sortedHistory.length > 0 ? (
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={sortedHistory} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#334155" />
                 <XAxis 
                   dataKey="date" 
                   tickFormatter={(str) => format(parseISO(str), 'd MMM', { locale: it })}
@@ -125,8 +125,14 @@ export const WeightTracker: React.FC<WeightTrackerProps> = ({ history, onAddEntr
                   tickFormatter={(val) => `${val}kg`}
                 />
                 <Tooltip 
-                  contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                  cursor={{ fill: '#f1f5f9' }}
+                  contentStyle={{ 
+                    backgroundColor: '#1e293b', 
+                    borderRadius: '8px', 
+                    border: '1px solid #334155', 
+                    boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.3)',
+                    color: '#f8fafc'
+                  }}
+                  cursor={{ fill: '#334155' }}
                   formatter={(value: number) => [`${value} kg`, 'Peso']}
                   labelFormatter={(label: string) => format(parseISO(label), 'd MMMM yyyy', { locale: it })}
                 />
@@ -139,7 +145,7 @@ export const WeightTracker: React.FC<WeightTrackerProps> = ({ history, onAddEntr
               </BarChart>
             </ResponsiveContainer>
           ) : (
-            <div className="h-full flex items-center justify-center text-slate-400 border-2 border-dashed border-slate-100 rounded-xl">
+            <div className="h-full flex items-center justify-center text-slate-500 border-2 border-dashed border-slate-800 rounded-xl">
               Inserisci i dati per vedere il grafico
             </div>
           )}

@@ -51,16 +51,16 @@ export const ProgressView: React.FC<ProgressViewProps> = ({ userData, consumedFo
     return (
       <div className="mb-4">
         <div className="flex justify-between items-end mb-1">
-          <span className="text-sm font-medium text-gray-700">{label}</span>
+          <span className="text-sm font-medium text-slate-300">{label}</span>
           <div className="text-sm">
-            <span className={cn("font-bold", isOver ? "text-red-500" : "text-gray-900")}>
+            <span className={cn("font-bold", isOver ? "text-red-400" : "text-white")}>
               {Math.round(current)}
             </span>
-            <span className="text-gray-400 mx-1">/</span>
-            <span className="text-gray-500">{target}g</span>
+            <span className="text-slate-500 mx-1">/</span>
+            <span className="text-slate-400">{target}g</span>
           </div>
         </div>
-        <div className="h-2.5 w-full bg-gray-100 rounded-full overflow-hidden">
+        <div className="h-2.5 w-full bg-slate-800 rounded-full overflow-hidden">
           <div 
             className={cn("h-full rounded-full transition-all duration-500", colorClass, isOver && "bg-red-500")} 
             style={{ width: `${percentage}%` }}
@@ -72,16 +72,16 @@ export const ProgressView: React.FC<ProgressViewProps> = ({ userData, consumedFo
 
   return (
     <Card className="h-full">
-      <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-        <span className="bg-indigo-100 text-indigo-700 p-1.5 rounded-lg text-sm">4</span>
+      <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+        <span className="bg-indigo-500/20 text-indigo-400 p-1.5 rounded-lg text-sm">4</span>
         Progresso Giornaliero
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Calories Circle or Big Bar */}
-        <div className="flex flex-col justify-center items-center p-6 bg-slate-50 rounded-xl border border-slate-100">
-          <div className="text-sm text-slate-500 font-medium uppercase tracking-wider mb-2">Calorie Assunte</div>
-          <div className="text-5xl font-bold text-slate-900 mb-1">
+        <div className="flex flex-col justify-center items-center p-6 bg-slate-800 rounded-xl border border-slate-700">
+          <div className="text-sm text-slate-400 font-medium uppercase tracking-wider mb-2">Calorie Assunte</div>
+          <div className="text-5xl font-bold text-white mb-1">
             {Math.round(consumed.calories)}
           </div>
           <div className="text-sm text-slate-400 mb-4">
@@ -89,11 +89,11 @@ export const ProgressView: React.FC<ProgressViewProps> = ({ userData, consumedFo
           </div>
           
           {/* Calorie Progress Bar */}
-          <div className="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+          <div className="w-full h-3 bg-slate-700 rounded-full overflow-hidden">
              <div 
                 className={cn(
                   "h-full rounded-full transition-all duration-500",
-                  consumed.calories > targets.calories ? "bg-red-500" : "bg-indigo-600"
+                  consumed.calories > targets.calories ? "bg-red-500" : "bg-indigo-500"
                 )}
                 style={{ width: `${Math.min(100, (consumed.calories / targets.calories) * 100)}%` }}
              />
