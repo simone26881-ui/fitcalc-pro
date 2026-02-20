@@ -1,0 +1,5 @@
+{
+  "name": "MACRO TRACKER APP",
+  "description": "Calcolatore BMR, deficit calorico e tracker macronutrienti con database alimenti italiani",
+  "requestFramePermissions": []
+}
